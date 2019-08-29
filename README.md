@@ -1,5 +1,7 @@
 # SylvanQuest
 
+![](logo.png =250x250)
+
 ## Recap
 - Responsive car mobile
 - Maps avec geoloc
