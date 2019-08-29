@@ -1,6 +1,6 @@
 # SylvanQuest
 
-![](logo.png =250x250)
+![](https://aiko17000.github.io/sylvan-quest/logo.png =250x250)
 
 ## Recap
 - Responsive car mobile
