@@ -3,11 +3,11 @@ class GameOverState {
     {
         this.game = game;
     }
-    
+
     go()
     {
         console.log(this.constructor.name);
-        console.log(this.game.endEvt);
-        this.game.dispatchEvent(this.game.endEvt); 
+        //console.log(this.game.endEvt);
+        //this.game.dispatchEvent(this.game.endEvt);
     }
 }

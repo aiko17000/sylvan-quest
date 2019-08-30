@@ -1,10 +1,10 @@
-class Game extends {
+class Game {
 
     constructor()
     {
         this.count = 0;
         this.currentState = new WelcomeState(this);
-        this.endEvt = new Event('ended');
+        //this.endEvt = new Event('ended');
     }
 
     changeState(state)
