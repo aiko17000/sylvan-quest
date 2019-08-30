@@ -32,8 +32,7 @@ class WelcomeState {
   </div>
   `;
 
-      var element = document.getElementById("main-container");
-      element.innerHTML = markup;
+      this.game.render(markup);
       var test = document.getElementById("test");
       test.onclick = function() { alert("moot!"); };
     }

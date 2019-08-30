@@ -2,9 +2,9 @@ class Game {
 
     constructor()
     {
-        this.count = 0;
+        this.score = 0;
         this.currentState = new WelcomeState(this);
-        //this.endEvt = new Event('ended');
+        this.container =  document.getElementById("main-container");
     }
 
     changeState(state)
@@ -19,6 +19,11 @@ class Game {
     {
         console.log("go");
         this.currentState.go();
+    }
+
+    render(markup)
+    {
+      this.container.innerHTML = markup;
     }
 }
 
