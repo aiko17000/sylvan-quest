@@ -1,13 +1,12 @@
-class Game extends EventTarget{
-    
+class Game extends {
+
     constructor()
     {
-        super();
         this.count = 0;
         this.currentState = new WelcomeState(this);
         this.endEvt = new Event('ended');
     }
-    
+
     changeState(state)
     {
         this.currentState = state;
@@ -15,7 +14,7 @@ class Game extends EventTarget{
             this.currentState.go();
         });
     }
-    
+
     start()
     {
         console.log("go");
@@ -27,5 +26,4 @@ class Game extends EventTarget{
 // sleep time expects milliseconds
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
-  }
-
+}

@@ -3,10 +3,10 @@ class GameplayState {
     {
         this.game = game;
     }
-}
 
-GameplayState.prototype.go = function ()
-{
-    console.log(this.constructor.name);
-    this.game.changeState(new GameOverState(this.game));
+    go()
+    {
+        console.log(this.constructor.name);
+        this.game.changeState(new GameOverState(this.game));
+    }
 }

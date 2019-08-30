@@ -6,10 +6,10 @@
     {
         var game = new Game();
         game.start();
-    
-        game.addEventListener('ended', function (e) {
+
+        /**game.addEventListener('ended', function (e) {
             startGame();
-        });
+        });**/
     }
 
 })();
