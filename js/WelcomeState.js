@@ -2,8 +2,11 @@ class WelcomeState {
     constructor(game)
     {
         this.game = game;
-        this.nextState = new TestSelectionState(game);
     }
 }
 
-WelcomeState.prototype.go = goToNext;
+WelcomeState.prototype.go = function ()
+{
+    console.log(this.constructor.name);
+    this.game.changeState(new TestSelectionState(this.game));
+}
