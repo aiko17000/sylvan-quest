@@ -2,15 +2,8 @@ class WelcomeState {
     constructor(game)
     {
         this.game = game;
+        this.nextState = new TestSelectionState(game);
     }
 }
 
-
-Red = function (light) {
-    this.light = light;
- 
-    this.go = function () {
-        log.add("Red --> for 1 minute");
-        light.change(new Green(light));
-    }
-};
+WelcomeState.prototype.go = goToNext;
