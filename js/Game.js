@@ -23,10 +23,6 @@ class Game extends EventTarget{
     }
 }
 
-Game.prototype.changeState = function (state) {
-    //if (this.count++ >= 10) return;
-
-};
 
 // sleep time expects milliseconds
 function sleep (time) {
