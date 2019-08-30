@@ -1,7 +1,11 @@
 class Game extends EventTarget{
-    count = 0;
-    currentState = new WelcomeState(this);
-    endEvt = new Event('ended');
+    
+    constructor()
+    {
+            this.count = 0;
+            this.currentState = new WelcomeState(this);
+            this.endEvt = new Event('ended');
+    }
 }
 
 Game.prototype.changeState = function (state) {
