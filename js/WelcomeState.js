@@ -4,11 +4,19 @@ class WelcomeState {
         this.game = game;
     }
 
-    go()
+    enter()
     {
-        console.log(this.constructor.name);
+        console.log("Entering " + this.constructor.name);
         this.render();
-        //this.game.changeState(new TestSelectionState(this.game));
+
+        var test = document.getElementById("test");
+        test.onclick = function() { this.leave() };
+    }
+
+    leave()
+    {
+      console.log("Leaving " + this.constructor.name);
+      this.game.changeState(new TestSelectionState(this.game));
     }
 
 
@@ -33,7 +41,6 @@ class WelcomeState {
   `;
 
       this.game.render(markup);
-      var test = document.getElementById("test");
-      test.onclick = function() { alert("moot!"); };
+
     }
 }

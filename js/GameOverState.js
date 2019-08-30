@@ -4,10 +4,18 @@ class GameOverState {
         this.game = game;
     }
 
-    go()
+    enter()
     {
-        console.log(this.constructor.name);
+        console.log("Entering " + this.constructor.name);
         //console.log(this.game.endEvt);
         //this.game.dispatchEvent(this.game.endEvt);
     }
+
+    leave()
+    {
+        console.log("Leaving " + this.constructor.name);
+        //console.log(this.game.endEvt);
+        //this.game.dispatchEvent(this.game.endEvt);
+    }
+
 }

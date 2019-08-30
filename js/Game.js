@@ -7,19 +7,20 @@ class Game {
         this.container =  document.getElementById("main-container");
     }
 
+    start()
+    {
+        console.log("go");
+        this.currentState.enter();
+    }
+
     changeState(state)
     {
         this.currentState = state;
         sleep(200).then(() => {
-            this.currentState.go();
+            this.currentState.enter();
         });
     }
 
-    start()
-    {
-        console.log("go");
-        this.currentState.go();
-    }
 
     render(markup)
     {

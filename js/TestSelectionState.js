@@ -4,9 +4,15 @@ class TestSelectionState {
         this.game = game;
     }
 
-    go()
+    enter()
     {
-        console.log(this.constructor.name);
+        console.log("Entering " + this.constructor.name);
+    }
+
+    leave()
+    {
+        console.log("Leaving " + this.constructor.name);
         this.game.changeState(new GameplayState(this.game));
     }
+    
 }
