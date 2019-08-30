@@ -2,8 +2,12 @@ class GameOverState {
     constructor(game)
     {
         this.game = game;
-        this.nextState = new WelcomeState(game);
     }
 }
 
-GameOverState.prototype.go = goToNext;
+GameOverState.prototype.go = function ()
+{
+    console.log(this.constructor.name);
+    console.log(this.game.endEvt);
+    this.game.dispatchEvent(this.game.endEvt);
+}
