@@ -2,9 +2,10 @@ class Game extends EventTarget{
     
     constructor()
     {
-            this.count = 0;
-            this.currentState = new WelcomeState(this);
-            this.endEvt = new Event('ended');
+        super();
+        this.count = 0;
+        this.currentState = new WelcomeState(this);
+        this.endEvt = new Event('ended');
     }
 }
 
