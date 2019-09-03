@@ -3,6 +3,7 @@ class GameplayState {
     {
         this.game = game;
         this.map = null;
+        this.lc = null;
     }
 
     enter()
@@ -11,11 +12,21 @@ class GameplayState {
         this.render();
 
         console.log("Creating map");
-        this.map = new OpenLayers.Map("map");
-        this.map.addLayer(new OpenLayers.Layer.OSM());
-        this.map.zoomToMaxExtent();
+        window.map = L.map('map').setView([46.3630104, 2.9846608], 6);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(window.map);
 
-        this.checklocation();
+        window.lc = L.control.locate({
+          setView : 'always',
+          showPopup : false,
+          position: 'topright',
+        });
+        window.lc.addTo(window.map);
+        window.lc.start();
+
+        window.map.on('locationfound', window.game.currentState.onLocationFound);
+
     }
 
     leave()
@@ -24,28 +35,22 @@ class GameplayState {
         this.game.changeState(new GameOverState(this.game));
     }
 
-    checklocation()
-    {
-      var options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      };
-      navigator.geolocation.getCurrentPosition(window.game.currentState.success, null, options);
-
+    onLocationFound(e) {
+    	var radius = e.accuracy;
+      console.log('passe');
+    	L.marker(e.latlng).addTo(window.map)
+    		.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
     }
+
+
 
     success(pos)
     {
       var crd = pos.coords;
       console.log('Latitude : ' + crd.latitude + ' / Longitude : ' + crd.longitude);
-      
-      var zoom = 18;
-      var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-      var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-      var position       = new OpenLayers.LonLat(crd.longitude,crd.latitude).transform( fromProjection, toProjection);
-      window.game.currentState.map.setCenter(position, zoom);
+
+      //window.game.currentState.map.setCenter(position, zoom);
 
     }
 
