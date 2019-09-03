@@ -1,0 +1,1 @@
+{"name":"Sample","steps":[{"name":"Step1","x":46.169333,"y":-1.201016,"question":{"type":"qcm","sentence":"Combien font 4 + 4 ?","choices":["2","4","6"],"answer":"4"}},{"name":"Step2","x":46.169954,"y":-1.202342,"question":{"type":"open","sentence":null,"choices":null,"answer":null}}],"currentStep":1}
