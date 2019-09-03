@@ -7,4 +7,9 @@ class Test {
         this.currentStep = 0;
     }
 
+    getStep()
+    {
+      return this.steps[this.currentStep];
+    }
+
 }
