@@ -8,19 +8,8 @@
        createTest();
     }
     else {
-        startGame();
-    }
-
-
-
-    function startGame()
-    {
-        window.game = new Game();
-        window.game.start();
-
-        /**game.addEventListener('ended', function (e) {
-            startGame();
-        });**/
+      window.game = new Game();
+      window.game.start();
     }
 
 
