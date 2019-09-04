@@ -37,6 +37,7 @@ class GameplayState {
         });
         window.lc.addTo(window.map);
         window.lc.start();
+        window.lc.
         window.map.on('locationfound', window.game.currentState.onLocationFound);
 
     }
@@ -60,6 +61,7 @@ class GameplayState {
         {
             window.game.currentState.inStep =  true;
             console.log(window.game.test.getStep());
+            window.navigator.vibrate(200);
             window.game.test.getStep().render();
         }
       }
