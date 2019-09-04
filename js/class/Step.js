@@ -63,8 +63,6 @@ class Step {
       var s = document.getElementById("submit");
       s.onclick = window.game.test.getStep().handleAnswer;
 
-
-      //TODO gestions des evts réponses + scoring + passage au next step et fermeture modal
     }
 
     handleAnswer()
