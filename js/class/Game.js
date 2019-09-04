@@ -2,6 +2,12 @@ class Game {
 
     constructor()
     {
+        this.settings = {
+          test : "test2.json",
+          distance : 10,
+          good : 3,
+          wrong : -1,
+        }
         this.score = 0;
         this.currentState = new WelcomeState(this);
         this.container =  document.getElementById("main-container");
@@ -12,7 +18,7 @@ class Game {
     {
       console.log("Starting");
       console.log("Loading data");
-      fetch('js/test.json')
+      fetch('js/'+this.settings.test)
       .then(response => response.text())
       .then((data) => {
 
