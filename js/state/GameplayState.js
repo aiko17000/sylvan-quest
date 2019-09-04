@@ -58,6 +58,12 @@ class GameplayState {
         console.log("Distance : " +distance);
         if(distance < window.game.settings.distance)
         {
+
+            if (("Notification" in window) && (Notification.permission === "granted"))
+            {
+              var notification = new Notification("Vous etes a proximite d'un point !");
+            }
+
             window.game.currentState.inStep =  true;
             console.log(window.game.test.getStep());
             navigator.vibrate([500]);
@@ -90,6 +96,7 @@ class GameplayState {
 
       }
       else {
+           localStorage.setItem('score' , window.game.score);
           this.leave();
       }
 

@@ -32,6 +32,24 @@ class Game {
         console.log("Data loaded");
         console.log(loaded);
 
+        if (!("Notification" in window)) {
+          }
+        else if (Notification.permission === "granted") {
+        }
+        else if (Notification.permission !== 'denied') {
+          Notification.requestPermission(function (permission) {
+
+            if(!('permission' in Notification)) {
+              Notification.permission = permission;
+            }
+          });
+        }
+
+        if(!localStorage.getItem('score')) {
+          localStorage.setItem('score' , 0);
+        } else {
+          this.score = parseInt(localStorage.getItem('score'));
+        }
 
         this.currentState.enter();
       })
