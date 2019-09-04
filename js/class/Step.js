@@ -27,7 +27,7 @@ class Step {
       case 'picture' :
         messages.quiz = `
         <div class="input-field">
-          <input type="file" accept="image/*" capture="camera" />
+          <input id="answer" type="file" accept="image/*" capture="camera" required />
         </div>
         `;
         break;
@@ -80,13 +80,17 @@ class Step {
       var s = document.getElementById("submit");
       s.parentNode.removeChild(s);
 
-      var answer = document.getElementById("answer");
+      var answer = document.getElementById("answer").value;
+
+      if(window.game.test.getStep().question.type == "picture")
+      {
+        answer = "1";
+      }
 
       var score = window.game.settings.wrong;
       var message = '<p class="red-text">Wrong, you get ' + window.game.settings.wrong + ' points.</p>';
 
-
-      if(answer.value == window.game.test.getStep().question.answer)
+      if((answer == window.game.test.getStep().question.answer))
       {
         score = window.game.settings.good;
         message = '<p class="green-text">Correct, you get ' + window.game.settings.good + ' points.</p>';

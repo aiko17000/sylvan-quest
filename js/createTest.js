@@ -9,10 +9,9 @@ function createTest()
   step1.y = -1.152152;
 
   var q1 = new Question();
-  q1.type = "open";
-  q1.sentence = "Combien font 2 + 2 ?";
-  q1.choices = ["2", "4", "6"];
-  q1.answer = "4";
+  q1.type = "picture";
+  q1.sentence = "Prenez une photo !!";
+  q1.answer = "1";
 
   step1.question = q1;
 
