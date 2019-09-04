@@ -36,6 +36,20 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, 
   padding: 0;
 }
 
+#gameover {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-control-locate {
+  display : none
+}
+
+.leaflet-control-zoom {
+  display: none
+}
+
 /*---------- SPACING ----------*/
 
 

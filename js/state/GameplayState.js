@@ -13,13 +13,23 @@ class GameplayState {
         this.extra = document.getElementById("extra");
 
         console.log("Creating map");
-        window.map = L.map('map').setView([46.3630104, 2.9846608], 6);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        window.map = L.map('map');
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(window.map);
 
+        window.map.touchZoom.disable();
+        window.map.doubleClickZoom.disable();
+        window.map.scrollWheelZoom.disable();
+        window.map.boxZoom.disable();
+        window.map.keyboard.disable();
+        window.map.zoomControl.disable()
+
         var step = window.game.test.getStep();
         window.stepMarker = L.marker([step.x, step.y]).addTo(window.map);
+
+        window.map.setView(window.stepMarker.getLatLng(), 20);
 
         window.lc = L.control.locate({
           showPopup : false,
@@ -42,7 +52,7 @@ class GameplayState {
       {
         var user = e.latlng;
         var marker = window.stepMarker.getLatLng()
-        map.fitBounds(L.latLngBounds([user, marker]));
+        map.fitBounds(L.latLngBounds([user, marker]), {padding: [50, 50]});
 
         var distance = marker.distanceTo(user);
         console.log("Distance : " +distance);

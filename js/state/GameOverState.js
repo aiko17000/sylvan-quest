@@ -19,17 +19,17 @@ class GameOverState {
     render()
     {
       const messages = {
-        title: 'Game Over',
-        score : 'You scored ' + window.game.score + 'points'
+        title: 'GAME OVER',
+        score : 'You scored ' + window.game.score + ' points'
       }
 
       const markup = `
       <div id="gameover" class="center-align teal">
         <br><br>
-        <h1 class="white-text mb100">
+        <h2 class="white-text mb50">
             ${messages.title}
         </h2>
-        <p class="white-text">${messages.score}</p>
+        <h5 class="white-text">${messages.score}</h5>
       </div>
       `;
 

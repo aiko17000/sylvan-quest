@@ -23,17 +23,15 @@ class WelcomeState {
     render()
     {
       const messages = {
-        title: 'Sylvan Quest',
-        greeter: 'Click to continue',
+        greeter: 'CLICK TO CONTINUE',
       }
 
       const markup = `
       <div id="welcome" class="center-align teal">
         <br><br>
-        <h1 class="white-text mb100">
-            ${messages.title}
-        </h2>
-        <p class="white-text">${messages.greeter}</p>
+        <img src="logo.png" height="150" width="150">
+        <br> <br>
+        <h5 class="white-text">${messages.greeter}</h1>
       </div>
       `;
 
