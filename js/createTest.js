@@ -24,7 +24,7 @@ function createTest()
   var q2 = new Question();
   q2.type = "qcm";
   q2.sentence = "Combien font 4 + 4 ?";
-  q2.answer = "4";
+  q2.answer = "8";
 
   step2.question = q2;
 
@@ -35,15 +35,5 @@ function createTest()
   console.log(test);
 
   document.getElementById("main-container").innerHTML = JSON.stringify(test);
-
-  var parsed = JSON.parse(JSON.stringify(test));
-  var loaded = Object.assign(new Test, parsed);
-  loaded.steps.forEach( function(value, index) {
-    loaded.steps[index] = Object.assign(new Step, loaded.steps[index]);
-    loaded.steps[index].question = Object.assign(new Question, loaded.steps[index].question)
-  });
-
-
-  console.log(loaded);
 
 }
