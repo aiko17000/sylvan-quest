@@ -61,7 +61,7 @@ class GameplayState {
         {
             window.game.currentState.inStep =  true;
             console.log(window.game.test.getStep());
-            window.navigator.vibrate(200);
+            window.navigator.vibrate([500]);
             window.game.test.getStep().render();
         }
       }
