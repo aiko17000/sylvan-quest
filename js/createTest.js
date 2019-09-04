@@ -21,7 +21,7 @@ function createTest()
   step2.y = -1.152930;
 
   var q2 = new Question();
-  q2.type = "qcm";
+  q2.type = "open";
   q2.sentence = "Combien font 4 + 4 ?";
   q2.answer = "8";
 
