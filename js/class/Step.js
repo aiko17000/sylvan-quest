@@ -80,7 +80,8 @@ class Step {
       var s = document.getElementById("submit");
       s.parentNode.removeChild(s);
 
-      var answer = document.getElementById("answer").value;
+      var answer = document.getElementById("answer");
+      if(answer) { answer =  answer.value; } else {answer = "1";}
 
       if(window.game.test.getStep().question.type == "picture")
       {
