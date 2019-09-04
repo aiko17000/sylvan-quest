@@ -37,7 +37,6 @@ class GameplayState {
         });
         window.lc.addTo(window.map);
         window.lc.start();
-        window.lc.
         window.map.on('locationfound', window.game.currentState.onLocationFound);
 
     }
