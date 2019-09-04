@@ -25,7 +25,7 @@ class Step {
         break;
 
       case 'picture' :
-        `
+        messages.quiz = `
         <div class="input-field">
           <input type="file" accept="image/*" capture="camera" />
         </div>
