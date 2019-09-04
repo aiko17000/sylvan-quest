@@ -23,6 +23,15 @@ class Step {
         </div>
         `;
         break;
+
+      case 'picture' :
+        `
+        <div class="input-field">
+          <input type="file" accept="image/*" capture="camera" />
+        </div>
+        `;
+        break;
+
       case 'qcm':
       messages.quiz +=`
       <div class="input-field">
@@ -62,6 +71,19 @@ class Step {
 
       var s = document.getElementById("submit");
       s.onclick = window.game.test.getStep().handleAnswer;
+
+      if(this.question.type == "picture")
+      {
+        var takePicture = document.querySelector("#take-picture");
+        takePicture.onchange = function (event) {
+            // Get a reference to the taken picture or chosen file
+            var files = event.target.files,
+                file;
+            if (files && files.length > 0) {
+                file = files[0];
+            }
+        };
+      }
 
     }
 
