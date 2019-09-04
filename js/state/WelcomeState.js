@@ -23,7 +23,7 @@ class WelcomeState {
     render()
     {
       const messages = {
-        greeter: 'CLICK TO CONTINUE',
+        greeter: 'CLICK TO CONTINUE !!',
       }
 
       const markup = `
