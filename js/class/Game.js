@@ -4,7 +4,7 @@ class Game {
     {
         this.settings = {
           test : "test2.json",
-          distance : 500,
+          distance : 5000,
           good : 3,
           wrong : -1,
         }
