@@ -8,6 +8,7 @@ class GameOverState {
     {
         console.log("Entering " + this.constructor.name);
         this.render();
+        navigator.vibrate([500, 250, 500, 250, 500, 250, 500, 250, 500, 250, 500]);
     }
 
     leave()
